@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Termos de Uso do BossChat IA</title>
+<meta name="description" content="Termos de Uso do aplicativo BossChat IA WhatsApp/Instagram (com.respondewpp.app).">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+  :root {
+    --ground: #F6F9F8;
+    --surface: #FFFFFF;
+    --ink: #142420;
+    --ink-soft: #4B5D58;
+    --ink-faint: #7C8F8A;
+    --accent: #0F7A6C;
+    --accent-soft: #E4F2EF;
+    --accent-ink: #0B5A50;
+    --line: #D8E3E0;
+    --warn: #A85B0B;
+    --warn-soft: #FBEEDE;
+    --warn-line: #EBCDA0;
+    --shadow: 0 1px 2px rgba(20, 36, 32, 0.04), 0 8px 24px -12px rgba(20, 36, 32, 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #0D1512;
+      --surface: #121C19;
+      --ink: #EAF2EF;
+      --ink-soft: #9FB3AE;
+      --ink-faint: #6C8580;
+      --accent: #3FBFA8;
+      --accent-soft: #16302A;
+      --accent-ink: #6FDAC4;
+      --line: #22403A;
+      --warn: #E2A33D;
+      --warn-soft: #2A2013;
+      --warn-line: #4A3820;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0D1512;
+    --surface: #121C19;
+    --ink: #EAF2EF;
+    --ink-soft: #9FB3AE;
+    --ink-faint: #6C8580;
+    --accent: #3FBFA8;
+    --accent-soft: #16302A;
+    --accent-ink: #6FDAC4;
+    --line: #22403A;
+    --warn: #E2A33D;
+    --warn-soft: #2A2013;
+    --warn-line: #4A3820;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Source Serif 4", Georgia, serif;
+    text-wrap: balance;
+    color: var(--ink);
+    margin: 0;
+  }
+  .mono {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: "Source Serif 4", serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .brand .mark {
+    display: inline-flex;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: var(--accent);
+    color: var(--surface);
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-family: "IBM Plex Mono", monospace;
+  }
+  .switcher {
+    display: inline-flex;
+    background: var(--ground);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .switcher button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    font: inherit;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 7px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .switcher button[aria-selected="true"] {
+    background: var(--accent);
+    color: var(--surface);
+  }
+  .stamp {
+    margin-left: auto;
+    font-size: 0.72rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+
+  /* ---------- Layout ---------- */
+  .page {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 40px 24px 96px;
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 780px) {
+    .page { grid-template-columns: 1fr; padding-top: 24px; }
+    #toc-desktop { display: none !important; }
+  }
+
+  nav.toc {
+    position: sticky;
+    top: 76px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  nav.toc .toc-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  nav.toc a {
+    display: flex;
+    gap: 10px;
+    padding: 6px 8px;
+    margin: 0 -8px;
+    border-radius: 7px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.86rem;
+    line-height: 1.4;
+  }
+  nav.toc a:hover { background: var(--accent-soft); color: var(--accent-ink); }
+  nav.toc a .n {
+    font-family: "IBM Plex Mono", monospace;
+    color: var(--ink-faint);
+    font-size: 0.78rem;
+    min-width: 1.4em;
+  }
+
+  details.toc-mobile {
+    display: none;
+    margin-bottom: 28px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 4px 14px;
+  }
+  details.toc-mobile summary {
+    cursor: pointer;
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--ink);
+  }
+  details.toc-mobile nav.toc { position: static; padding-bottom: 12px; }
+  @media (max-width: 780px) {
+    details.toc-mobile { display: block; }
+  }
+
+  article header.doc-head {
+    margin-bottom: 8px;
+  }
+  article header.doc-head h1 {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 600;
+  }
+  article header.doc-head .updated {
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  article header.doc-head .updated .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+  }
+
+  .lede {
+    margin-top: 22px;
+    padding: 16px 20px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: 4px 10px 10px 4px;
+    color: var(--ink);
+    font-size: 0.98rem;
+  }
+  .lede strong { color: var(--accent-ink); }
+
+  section.sec {
+    margin-top: 40px;
+    scroll-margin-top: 84px;
+  }
+  section.sec h2 {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 14px;
+  }
+  section.sec h2 .n {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--accent-ink);
+    background: var(--accent-soft);
+    padding: 2px 8px;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  section.sec p { max-width: 66ch; color: var(--ink); margin: 0 0 12px; }
+  section.sec ul { max-width: 64ch; margin: 0 0 12px; padding-left: 0; list-style: none; }
+  section.sec li {
+    position: relative;
+    padding-left: 1.6em;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  section.sec li .tag {
+    position: absolute;
+    left: 0;
+    top: 0.1em;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--ink-faint);
+  }
+
+  .callout {
+    max-width: 66ch;
+    margin: 16px 0;
+    padding: 14px 18px;
+    border-radius: 4px 10px 10px 4px;
+    border-left: 3px solid var(--warn);
+    background: var(--warn-soft);
+  }
+  .callout p { margin: 0; color: var(--ink); }
+  .callout .label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 700;
+    color: var(--warn);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  footer.doc-foot {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-faint);
+    font-size: 0.8rem;
+  }
+
+  .doc { display: none; }
+  .doc.active { display: block; }
+
+  @media print {
+    .topbar, nav.toc, details.toc-mobile { display: none; }
+    .page { grid-template-columns: 1fr; }
+  }
+
+  .doc { display: block !important; }
+  .page { display: block; max-width: 860px; margin: 0 auto; padding: 1.2rem 1.2rem 3rem; }
+  .switcher a { padding: .4rem .9rem; border-radius: 999px; text-decoration: none; color: inherit; font-weight: 600; font-size: .92rem; }
+  .switcher a[aria-current="page"] { background: var(--accent-soft); color: var(--accent-ink); }
+  .ident { border: 1px solid var(--line); background: var(--surface); border-radius: 12px; padding: .8rem 1rem; margin: 1rem 0; max-width: 66ch; }
+  .en { color: var(--ink-soft); max-width: 66ch; font-size: .95rem; }
+</style>
+
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand"><span class="mark">B</span> BossChat IA</span>
+    <nav class="switcher" aria-label="Documentos"><a href="privacidade.html">Política de Privacidade</a><a href="termos.html" aria-current="page">Termos de Uso</a></nav>
+    <span class="stamp mono">rev. 24&nbsp;out&nbsp;2026</span>
+  </div>
+</div>
+
+<div class="page">
+  <article>
+    <div class="doc active">
+
+      <header class="doc-head">
+        <h1>Termos de Uso</h1>
+        <span class="updated"><span class="dot"></span>Última atualização: 24 de outubro de 2026</span>
+      </header>
+
+      <section class="sec" id="t-1"><h2><span class="n">1</span>Quem somos e o que é o app</h2>
+        <p>O BossChat IA ("app") é um aplicativo para Android desenvolvido por Filipe Prado ("nós"). Ele ajuda pequenos negócios a responder automaticamente mensagens recebidas no WhatsApp, usando serviços de inteligência artificial contratados pelo próprio usuário.</p>
+        <p>Ao instalar ou usar o app, você declara que leu, entendeu e concorda com estes Termos. Se não concordar, não use o app.</p>
+      </section>
+
+      <section class="sec" id="t-2"><h2><span class="n">2</span>O app não tem vínculo com o WhatsApp</h2>
+        <p>O BossChat IA não é desenvolvido, patrocinado, endossado nem afiliado ao WhatsApp LLC, à Meta Platforms, ao Google, à Google DeepMind ou à Groq. Todas as marcas citadas pertencem aos seus respectivos donos e são mencionadas apenas para identificar compatibilidade.</p>
+        <p>O app funciona lendo e respondendo notificações do sistema Android, com a sua autorização expressa. Ele não modifica, não descompila e não se conecta diretamente aos servidores do WhatsApp.</p>
+      </section>
+
+      <section class="sec" id="t-3"><h2><span class="n">3</span>Você precisa de uma chave de IA própria</h2>
+        <p>O app não fornece inteligência artificial. Para funcionar, você precisa cadastrar suas próprias chaves de API (por exemplo, Google Gemini e/ou Groq). Isso significa que:</p>
+        <ul>
+          <li><span class="tag">a</span>o relacionamento sobre uso, cotas, cobrança e disponibilidade da IA é entre você e o provedor escolhido;</li>
+          <li><span class="tag">b</span>você deve cumprir os termos de uso do provedor de IA;</li>
+          <li><span class="tag">c</span>planos gratuitos têm limites diários e podem falhar a qualquer momento, sem que isso seja um defeito do app;</li>
+          <li><span class="tag">d</span>não temos como recuperar, ver ou repor chaves perdidas.</li>
+        </ul>
+      </section>
+
+      <section class="sec" id="t-4"><h2><span class="n">4</span>Teste grátis e assinatura</h2>
+        <p>O app pode ser usado gratuitamente por um período de teste (atualmente 30 dias) a partir da primeira instalação em cada aparelho. Depois desse período, para continuar usando, é necessário assinar o plano mensal pago, cobrado através do sistema de pagamento do Google Play — nunca diretamente por nós. O Google Play trata os dados do seu meio de pagamento (cartão, etc.); nós não temos acesso a essa informação.</p>
+        <p>A assinatura renova automaticamente todo mês até ser cancelada. O cancelamento é feito nas configurações da sua conta Google Play (Play Store → Pagamentos e assinaturas), a qualquer momento; o acesso continua valendo até o fim do período já pago. Reembolsos seguem a política do próprio Google Play.</p>
+      </section>
+
+      <section class="sec" id="t-5"><h2><span class="n">5</span>Uso permitido</h2>
+        <p>Você concorda em usar o app apenas para se comunicar com pessoas que tenham interesse legítimo em falar com o seu negócio, respeitando a legislação brasileira, em especial a Lei Geral de Proteção de Dados (Lei 13.709/2018) e o Código de Defesa do Consumidor.</p>
+        <p>É expressamente proibido usar o app para:</p>
+        <ul>
+          <li><span class="tag">a</span>enviar spam, mensagens em massa não solicitadas ou correntes;</li>
+          <li><span class="tag">b</span>enviar mensagens a listas compradas, raspadas ou obtidas sem base legal;</li>
+          <li><span class="tag">c</span>praticar golpes, fraudes, phishing ou se passar por outra pessoa ou empresa;</li>
+          <li><span class="tag">d</span>enviar conteúdo ilegal, ofensivo, discriminatório ou que viole direitos de terceiros;</li>
+          <li><span class="tag">e</span>automatizar contas de terceiros sem autorização do titular.</li>
+        </ul>
+        <div class="callout"><span class="label">Responsabilidade</span><p>O descumprimento pode levar ao bloqueio da sua conta pelo WhatsApp, à suspensão da sua chave pelo provedor de IA e à sua responsabilização civil e criminal. Essa responsabilidade é exclusivamente sua.</p></div>
+      </section>
+
+      <section class="sec" id="t-6"><h2><span class="n">6</span>Recursos de envio em massa e automação agressiva</h2>
+        <div class="callout"><span class="label">Risco de bloqueio</span><p>Alguns recursos (campanhas, prospecção, envio em massa, envio em lote) aumentam o risco de o WhatsApp restringir ou banir o seu número. Esses recursos são opcionais, vêm desligados e só são ativados por escolha sua, após aviso dentro do app. Ao ativá-los, você assume esse risco integralmente.</p></div>
+      </section>
+
+      <section class="sec" id="t-7"><h2><span class="n">7</span>Respostas geradas por IA</h2>
+        <p>As respostas são geradas automaticamente por modelos de inteligência artificial e podem conter erros, informações desatualizadas ou inadequadas. Você é o responsável por tudo que é enviado a partir do seu número, inclusive por mensagens geradas automaticamente. Recomendamos revisar as configurações, testar o comportamento do app e acompanhar as conversas, principalmente em assuntos sensíveis (preços, prazos, saúde, contratos, cobranças).</p>
+        <p>O app não presta consultoria jurídica, médica, financeira ou contábil.</p>
+      </section>
+
+      <section class="sec" id="t-8"><h2><span class="n">8</span>Disponibilidade</h2>
+        <p>O app é fornecido "no estado em que se encontra". Não garantimos funcionamento ininterrupto ou livre de falhas. Atualizações do Android, do WhatsApp ou dos provedores de IA podem quebrar funcionalidades a qualquer momento. Podemos alterar, suspender ou descontinuar recursos, com ou sem aviso prévio.</p>
+      </section>
+
+      <section class="sec" id="t-9"><h2><span class="n">9</span>Limitação de responsabilidade</h2>
+        <p>Na máxima extensão permitida pela lei, não nos responsabilizamos por:</p>
+        <ul>
+          <li><span class="tag">a</span>bloqueio, suspensão ou banimento do seu número no WhatsApp;</li>
+          <li><span class="tag">b</span>mensagens enviadas de forma incorreta, duplicada, fora de hora ou para o destinatário errado;</li>
+          <li><span class="tag">c</span>custos, cobranças ou estouro de cota junto ao provedor de IA;</li>
+          <li><span class="tag">d</span>perda de vendas, lucros cessantes, danos indiretos ou perda de dados;</li>
+          <li><span class="tag">e</span>conteúdo gerado pela inteligência artificial.</li>
+        </ul>
+        <p>Nada nestes Termos afasta direitos que o consumidor não possa renunciar por lei.</p>
+      </section>
+
+      <section class="sec" id="t-10"><h2><span class="n">10</span>Propriedade intelectual</h2>
+        <p>O código, o nome, o layout e a identidade visual do app pertencem ao desenvolvedor. Você recebe uma licença pessoal, limitada, não exclusiva e revogável para usar o app. Não é permitido copiar, revender, redistribuir, modificar ou fazer engenharia reversa do app.</p>
+        <p>Os conteúdos que você cadastra (produtos, textos, contatos) continuam sendo seus.</p>
+      </section>
+
+      <section class="sec" id="t-11"><h2><span class="n">11</span>Encerramento</h2>
+        <p>Você pode parar de usar o app a qualquer momento, desinstalando-o. Ao desinstalar, os dados guardados no aparelho são apagados pelo próprio Android, e backups que você tenha exportado permanecem sob sua guarda.</p>
+        <p>Podemos encerrar a licença de uso caso você descumpra estes Termos.</p>
+      </section>
+
+      <section class="sec" id="t-12"><h2><span class="n">12</span>Alterações</h2>
+        <p>Podemos atualizar estes Termos. A versão vigente é sempre a exibida nesta página e dentro do app, com a data de atualização no topo. Continuar usando o app após uma alteração significa concordância com a nova versão.</p>
+      </section>
+
+      <section class="sec" id="t-13"><h2><span class="n">13</span>Lei aplicável e foro</h2>
+        <p>Estes Termos são regidos pelas leis do Brasil. Fica eleito o foro do domicílio do usuário para resolver eventuais conflitos.</p>
+      </section>
+
+      <section class="sec" id="t-14"><h2><span class="n">14</span>Contato</h2>
+        <p>Dúvidas sobre estes Termos: escreva para <a href="mailto:tiagofilipeprado@gmail.com">tiagofilipeprado@gmail.com</a> ou fale com a gente pelo Instagram indicado em "Sobre o app".</p>
+      </section>
+
+      <footer class="doc-foot">BossChat IA — desenvolvido por Filipe Prado. Este documento também está disponível dentro do app, em Configurações → Termos e Privacidade.</footer>
+    
+    </div>
+  </article>
+</div>
+</body>
+</html>
